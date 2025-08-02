@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class startButton : MonoBehaviour
+public class skipButton : MonoBehaviour
 {
-    public void play()
+   public void play()
     {
-        SceneManager.LoadScene("CutScene");
+        SceneManager.LoadScene("MainScene");
     }
 }
