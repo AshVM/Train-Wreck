@@ -25,6 +25,6 @@ public class paw : MonoBehaviour
         pos.z = speed;
         transform.position = Camera.main.ScreenToWorldPoint(pos);
 
-
+        Cursor.visible = false;
     }
 }
