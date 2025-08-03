@@ -1,9 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class perfectCup : MonoBehaviour
 {
+    [SerializeField] GameObject coffeeBag;
+    [SerializeField] GameObject filter;
+    [SerializeField] GameObject sugar;
+    [SerializeField] GameObject machine;
+    [SerializeField] GameObject milk;
+    [SerializeField] GameObject mug;
+
+    public bool mouseOcc;
+    public int clicks;
+
+    
+
     /* Plan(pseudocode) for the script:
      * find mouse position
      * if mouse position is within 
@@ -25,7 +38,7 @@ public class perfectCup : MonoBehaviour
      *                  return object to og Pos
      *              yada yada ^^^ will make above a function so i dont have to write this multiple times
      *              
-     *
+     *          
      *           
      * 
      * 
@@ -35,12 +48,27 @@ public class perfectCup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        clicks = 0;
+        mouseOcc = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gameObject.CompareTag("water"))
+        {
+            if (mug.gameObject.GetComponent<mugScript>().waterSelected)
+            {
+                coffeeBag.GetComponent<followMouse3>().enabled = false;
+                sugar.GetComponent<followMouse3>().enabled = false;
+                milk.GetComponent<followMouse3>().enabled = false;
+                filter.GetComponent<followMouse3>().enabled = false;
+
+            }
+            
+            
+        }
+        
         
     }
 }

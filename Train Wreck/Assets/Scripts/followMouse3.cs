@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class followMouse2 : MonoBehaviour
+public class followMouse3 : MonoBehaviour
 {
     [SerializeField] Vector3 ogPos;
-    //[SerializeField] Collider2D myCollider;
+    [SerializeField] Collider2D myCollider;
 
     public int counter;
 
@@ -38,10 +38,10 @@ public class followMouse2 : MonoBehaviour
         if (counter == 0)
         {
             transform.position = ogPos;
-            //myCollider.enabled = true;
+            myCollider.enabled = true;
         }
         // if clicked ONCE follow mouse
-        else if(counter == 1)
+        else if (counter == 1)
         {
             pos.x = Input.mousePosition.x - horizontalDis;
             pos.y = Input.mousePosition.y - verticalDis;
@@ -49,7 +49,7 @@ public class followMouse2 : MonoBehaviour
 
 
             transform.position = Camera.main.ScreenToWorldPoint(pos);
-            //myCollider.enabled = false;
+            myCollider.enabled = false;
         }
         // if clicked a SECOND time return to OG pos
         else if (counter > 1)
@@ -58,6 +58,6 @@ public class followMouse2 : MonoBehaviour
             transform.position = ogPos;
         }
 
-        
+
     }
 }
