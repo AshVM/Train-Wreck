@@ -24,11 +24,18 @@ public class followMouse3 : MonoBehaviour
     private void OnMouseDown()
     {
         counter++;
+        if (counter > 1)
+        {
+            counter = 0;
+            transform.position = ogPos;
+            // myCollider.enabled = true;
+        }
     }
 
     private void Start()
     {
         counter = 0;
+
     }
     // Update is called once per frame
     void Update()
@@ -56,6 +63,7 @@ public class followMouse3 : MonoBehaviour
         {
             counter = 0;
             transform.position = ogPos;
+           // myCollider.enabled = true;
         }
 
 

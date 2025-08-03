@@ -21,7 +21,7 @@ public class followMouse2 : MonoBehaviour
     }
 
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         counter++;
     }

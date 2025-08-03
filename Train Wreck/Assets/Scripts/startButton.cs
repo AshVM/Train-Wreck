@@ -7,6 +7,6 @@ public class startButton : MonoBehaviour
 {
     public void play()
     {
-        SceneManager.LoadScene("CutScene");
+        SceneManager.LoadScene("MainScene");
     }
 }

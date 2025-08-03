@@ -23,7 +23,7 @@ public class mugScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameObject.CompareTag("water"))
+        /*if (gameObject.CompareTag("water"))
         {
             waterSelected = true;
             system.mouseOcc = true;
@@ -34,6 +34,9 @@ public class mugScript : MonoBehaviour
         if (system.clicks > 1)
         {
             //gameObject.GetComponent <followMouse2>().counter = 2;
-        }
+        }*/
+
+        waterSelected=true;
+
     }
 }
