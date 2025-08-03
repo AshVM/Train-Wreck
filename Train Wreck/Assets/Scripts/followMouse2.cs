@@ -14,7 +14,12 @@ public class followMouse2 : MonoBehaviour
     private float horizontalDis;
     private float verticalDis;
 
-    // Start is called before the first frame update
+    private void OnMouseEnter()
+    {
+        Debug.Log("mouse detected!!!");
+    }
+
+
     private void OnMouseDown()
     {
         counter++;
@@ -27,10 +32,13 @@ public class followMouse2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // if not clicked keep at og position
         if (counter == 0)
         {
             transform.position = ogPos;
         }
+        // if clicked ONCE follow mouse
         else if(counter == 1)
         {
             pos.x = Input.mousePosition.x - horizontalDis;
@@ -39,10 +47,13 @@ public class followMouse2 : MonoBehaviour
 
             transform.position = Camera.main.ScreenToWorldPoint(pos);
         }
+        // if clicked a SECOND time return to OG pos
         else if (counter > 1)
         {
             counter = 0;
             transform.position = ogPos;
         }
+
+        
     }
 }
