@@ -15,7 +15,7 @@ public class perfectCup : MonoBehaviour
     public bool mouseOcc;
     public int clicks;
 
-    
+
 
     /* Plan(pseudocode) for the script:
      * find mouse position
@@ -38,8 +38,28 @@ public class perfectCup : MonoBehaviour
      *                  return object to og Pos
      *              yada yada ^^^ will make above a function so i dont have to write this multiple times
      *              
-     *          
+     *          ^^^ disregard above for now ^^^
      *           
+     * 
+     * 
+     */
+
+
+    /* ACTUAL plan:
+     * 
+     * 1. add water to machine
+     *      - Assign drag and drop script to every object BUT machine
+     *      - assign enddrop script to machine
+     *      - assign machine tag to mug
+     *      - if dragged item has machine tag, change mug sprite, change machine sprite, water sfx, remove machine tag, proceed to step 2
+     *      - if dragged does NOT have water tag, "that's not the right order"
+     * 2. add powder to filter
+     *      - assign enddrop script to filter
+     *      - assign powder tag to coffee bag
+     *      - if dragged item has coffee tag, change filter sprite, bag sfx, remove filter tag from coffee bag, add machine tag to filter, proceed to step 3
+     *      - if dragged does NOT have coffee tag, "that's not the right order"
+     *     
+     * 
      * 
      * 
      */
