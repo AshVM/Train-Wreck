@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class ingredientManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public string ingredientName;
     public RectTransform rectTransform;
     public Canvas canvas;
-    private Transform ogPos;
+    private Vector2 ogPos;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
-        ogPos = gameObject.transform;
+        ogPos = rectTransform.anchoredPosition;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -25,13 +26,16 @@ public class ingredientManager : MonoBehaviour, IBeginDragHandler, IDragHandler,
     public void OnDrag(PointerEventData eventData)
     {
        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        Debug.Log("OnDrag");
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         GameObject target = eventData.pointerEnter;
 
-        gameObject.transform.position = ogPos.position;
+        rectTransform.anchoredPosition = ogPos;
+
+        Debug.Log("OnEndDrag");
 
 
 

@@ -6,6 +6,7 @@ public class dropTarget : MonoBehaviour
 {
     public string targetName;
     public GameManager gameManager;
+    
 
     public void OnItemDropped(string ingredientName)
     {
@@ -21,5 +22,10 @@ public class dropTarget : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnDrag()
+    {
+
     }
 }
