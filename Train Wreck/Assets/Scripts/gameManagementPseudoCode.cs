@@ -15,4 +15,19 @@ public class gameManagementPseudoCode : MonoBehaviour
     {
         
     }
+
+
+    /*
+     *  Game Manager:
+     *  
+     *  
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
 }

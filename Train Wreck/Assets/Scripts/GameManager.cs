@@ -6,19 +6,20 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private int recipeStep = 0;
-    private string[] recipe = { "Cup", "Coffee", "Sugar", "Milk" };
+    private string[] recipe = { "Cup", "Filter", "Coffee", "Sugar", "Milk" };
 
-    public void HandleIngredientDrop(string target, string ingredient)
+    public void HandleIngredientDrop(string ingredient)
     {
         // checks if recipe is complete
         if (recipeStep >= recipe.Length)
         {
             Debug.Log("Recipe already completed.");
+            // add transition to win scene here
             return;
            
         }
 
-        if (target == recipe[recipeStep] && ingredient == recipe[recipeStep])
+        if (ingredient == recipe[recipeStep])
         {
             recipeStep++;
             Debug.Log("Correct ingredient added: " + ingredient);
@@ -36,15 +37,5 @@ public class GameManager : MonoBehaviour
 
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

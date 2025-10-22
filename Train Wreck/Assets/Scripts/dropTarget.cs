@@ -1,31 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class dropTarget : MonoBehaviour
+public class dropTarget : MonoBehaviour, IDropHandler
 {
-    public string targetName;
     public GameManager gameManager;
+
     
 
-    public void OnItemDropped(string ingredientName)
+   /* public void OnItemDropped(string ingredientName)
     {
-        gameManager.HandleIngredientDrop(targetName, ingredientName);
-    }
-    // Start is called before the first frame update
-    void Start()
+        gameManager.HandleIngredientDrop(ingredientName);
+    }*/
+   
+    public void OnDrop(PointerEventData eventData)
     {
-        
-    }
+        GameObject droppedObject = eventData.pointerDrag;
+        if (droppedObject == null)
+        {
+            return;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ingredientManager IngredientManager = droppedObject.GetComponent<ingredientManager>();
+        IngredientManager.parentAfterDrag = transform;
+        Debug.Log("OnDrop");
     }
-
-    public void OnDrag()
-    {
-
-    }
+ 
 }
