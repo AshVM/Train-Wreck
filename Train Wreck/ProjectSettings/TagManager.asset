@@ -50,3 +50,6 @@ TagManager:
   - name: GameText
     uniqueID: 1935310555
     locked: 0
+  - name: New Layer
+    uniqueID: 3213866183
+    locked: 0

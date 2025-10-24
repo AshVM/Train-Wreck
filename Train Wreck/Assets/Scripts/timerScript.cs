@@ -10,11 +10,7 @@ public class timerScript : MonoBehaviour
     [SerializeField] float remainingTime;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()

@@ -8,23 +8,25 @@ public class dropTarget : MonoBehaviour, IDropHandler
     public GameManager gameManager;
 
     
-
-   /* public void OnItemDropped(string ingredientName)
-    {
-        gameManager.HandleIngredientDrop(ingredientName);
-    }*/
-   
     public void OnDrop(PointerEventData eventData)
     {
+
+        // dropped ingredient <- obtained from pointer info
         GameObject droppedObject = eventData.pointerDrag;
+        Debug.Log("Dropped Object: " + droppedObject.name);
+
+        //failsafe 
         if (droppedObject == null)
         {
             return;
         }
 
+
         ingredientManager IngredientManager = droppedObject.GetComponent<ingredientManager>();
         IngredientManager.parentAfterDrag = transform;
-        Debug.Log("OnDrop");
+        
+        // gives the game manager the name of the dropped ingredient
+        gameManager.HandleIngredientDrop(droppedObject.name);
     }
  
 }
