@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private int recipeStep = 0;
-    private string[] recipe = { "Cup", "Filter", "Coffee", "Sugar", "Sugar", "Sugar", "Sugar", "Sugar", "Milk", "Milk" };
+    public int recipeStep = 0;
+    public string[] recipe = { "Cup", "Filter", "Coffee", "Sugar", "Sugar", "Sugar", "Sugar", "Sugar", "Milk", "Milk" };
 
     public void HandleIngredientDrop(string ingredient)
     {

@@ -18,7 +18,7 @@ public class timerScript : MonoBehaviour
 
         if (remainingTime <= 0)
         {
-            remainingTime = 1;
+            //remainingTime = 1;
             SceneManager.LoadScene("LoseScene");
         }
 
@@ -30,6 +30,6 @@ public class timerScript : MonoBehaviour
         int mins = Mathf.FloorToInt(remainingTime / 60);
         int secs = Mathf.FloorToInt(remainingTime % 60);
 
-        timerText.text = string.Format("{00:00}:{1:00}", mins, secs);
+        timerText.text = string.Format("{0}:{1:00}", mins, secs);
     }
 }
