@@ -16,9 +16,8 @@ While I wasn't able to finish the game mechanics within the time period, I did p
 - Coffee Making!
 - Timer!
 - **Stunning** visuals!
+- Working game!
 
-# Whats Next?
+# What's Next?
 - Adding music and SFX
-- Finishing game mechanics
-- Adding main cutscene
-- Adding win scene
+- Adding cutscene
